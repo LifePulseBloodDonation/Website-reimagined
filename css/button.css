@@ -1,0 +1,169 @@
+.btn {
+  padding: 0.8rem 1.6rem;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.btn.dark {
+  background-color: #2a0f1c;
+  color: #fff;
+}
+
+.btn.light {
+  background-color: #9ee0e0;
+  color: #2a0f1c;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.pulse-button {
+  border: none;
+  transition: all 0.2s ease-in-out;
+  -webkit-appearance: none;
+  letter-spacing: -0.5px;
+  display: inline-block;
+  border-radius: 100px;
+  font-family: 'Comfortaa', cursive;
+  font-size: 14px;
+  color: white;
+  position: relative;
+  padding: 20px 60px;
+  background: #301622;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  transform: scale(1);
+}
+
+.pulse-button:hover {
+  transform: scale(1.04);
+}
+
+.pulse-button::before {
+  animation: pulse 2s ease infinite;
+  border-radius: 100px;
+  position: absolute;
+  background: #3f182b; /* match the button base color for purple */
+  content: "";
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+/* Blue variant */
+.pulse-button.pulse-blue {
+  background: #60c2cb;
+}
+
+.pulse-button.pulse-blue::before {
+  background: #60c2cb;
+}
+
+.pulse-button:hover::before {
+  animation: none;
+  background: #3f182b;
+  transform: scale(1.07);
+}
+
+.pulse-blue:hover::before {
+  animation: none;
+  background: #60c2cb;
+  transform: scale(1.07);
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1.2, 1.4);
+    opacity: 0;
+  }
+}
+
+/* Fixed position for button (likely the blob animation button) */
+.button-fixed {
+  position: fixed;
+  top: 0;
+  right: 30px;
+  z-index: 1000;
+}
+
+/* Blob animation button */
+.magnetic {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.wrap {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.wrap .span {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  border: 1.5px solid #f4aa84;
+  background: #ffddcc;
+  opacity: 0.6;
+  border-radius: 100%;
+  transition: all;
+}
+
+.wrap .span-1.go {
+  border-radius: 40% 42% 45% 55%;
+  animation: gogo 5200ms infinite linear;
+}
+
+.wrap .span-2.go {
+  border-radius: 55% 41% 65% 43%;
+  animation: gogo-2 5500ms infinite linear;
+}
+
+.wrap .span-3.go {
+  border-radius: 52% 72% 45% 61%;
+  animation: gogo 3400ms infinite linear;
+}
+
+.wrap .span-4.go {
+  border-radius: 58% 56% 72% 58%;
+  animation: gogo-2 6000ms infinite linear;
+}
+
+@keyframes gogo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gogo-2 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-720deg);
+  }
+}
