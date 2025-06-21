@@ -1,4 +1,10 @@
 /* General Reset */
+:root {
+  --color-bg-primary: #5d2a42;
+  --color-secondary: #FFDCCC;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +14,7 @@
 body {
   font-family: 'Comfortaa', sans-serif;
   color: #fff;
-  background: linear-gradient(to bottom, #651c3c, #7e2353, #b4466b, #ffc26b);
+  background: linear-gradient(to bottom, #5D2A42, #661E49);
   min-height: 200vh; /* double the height of the viewport */
 }
 
@@ -76,6 +82,7 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+  margin-bottom: 10%;
 }
 
 .hero-content {
@@ -87,6 +94,8 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  
+
 }
 
 .hero-logo {
@@ -181,6 +190,104 @@ body {
 
 /* STEPS */
 
+/*STEP 1*/
+  .split-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    padding: 50px 80px;
+  }
+  .split-left{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    text-align: left;
+    flex-direction: column;
+  }
+
+
+  .split-right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 40px;
+    text-align: left;
+  }
+
+  .split-right h2 {
+    font-size: 2em;
+    color: var(--color-secondary); /* light pink for Step #1 */
+    margin-bottom: 10px;
+}
+
+.split-right h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.split-right p {
+    width: 70%;
+    font-size: 1.3em;
+    line-height: 1.6;
+    margin-bottom: 30%;
+}
+
+/*STEP 2*/
+.split-container-two {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    padding: 50px 80px;
+    margin-top: 5%;
+   
+  }
+
+  .split-left-two{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 15%;
+    text-align: left;
+  }
+
+  .split-left-two h2 {
+    font-size: 2em;
+    color: var(--color-secondary); /* light pink for Step #1 */
+    margin-bottom: 10px;
+}
+
+.split-left-two h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    align-items: left;
+}
+
+.split-left-two p {
+    width: 85%;
+    font-size: 1.3em;
+    line-height: 1.6;
+    margin-bottom: 30%;
+}
+
+  .split-right-two{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 10% 0;
+    text-align: left;
+    flex-direction: column;
+  }
+
+
 /* Animation for the mouse-in */
 @keyframes animated-mouse {
   0% {
@@ -240,7 +347,7 @@ body {
 
 
 /* Responsive */
-@media(min-width: 768px) {
+@media(max-width: 768px) {
   .hero-content {
     flex-direction: row;
     justify-content: space-between;
@@ -259,4 +366,15 @@ body {
   .hero-text h1 {
     font-size: 4rem;
   }
+
+  .split-container {
+                flex-direction: column;
+            }
+
+            .split-left,
+            .split-right {
+                margin: 5px;
+                width: 95%;
+                height: 48vh;
+            }
 }
